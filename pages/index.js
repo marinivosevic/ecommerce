@@ -5,15 +5,16 @@ import { client } from "../LIB/client";
 const Home = ({products,bannerData}) => {
   return (
     <>
-      <HeroBanner/>
+      <HeroBanner heroBanner={bannerData.length && bannerData[0]}  />
+      {console.log(bannerData)}
       <div className="products-heading">
         <h2>Best selling Products</h2>
         <p>Difuzors of many variations</p>
       </div>
       <div className="products-container">
-        {products?.map((product) => product.name)}
+        {products?.map((product) => <Product key={product.id} product={product}/>)}
       </div>
-      <FooterBannerr/>
+      <FooterBannerr footerBanner = {bannerData && bannerData[0]}/>
     </>
   );
 };
