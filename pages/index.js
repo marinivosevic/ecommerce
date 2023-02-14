@@ -4,7 +4,7 @@ import { client } from "../LIB/client";
 
 const Home = ({products,bannerData}) => {
   return (
-    <>
+    <div>
       <HeroBanner heroBanner={bannerData.length && bannerData[0]}  />
       {console.log(bannerData)}
       <div className="products-heading">
@@ -15,7 +15,7 @@ const Home = ({products,bannerData}) => {
         {products?.map((product) => <Product key={product.id} product={product}/>)}
       </div>
       <FooterBannerr footerBanner = {bannerData && bannerData[0]}/>
-    </>
+    </div>
   );
 };
 
